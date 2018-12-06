@@ -1,0 +1,33 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "381b78d3b67cb453ba2de54404bb533f2059e0c8d1861ff9ff478b4d80c63e053af155d99af5afd40f46a78b49addfa1dfd39fc59a530a073d6c031cdc71f41772e59379e49d430117b0585038a205aa92234ce7568f201365f64fdae26d7942c07aa5f09abf80d651c2ad63863a4c2ed934d70217aaeffe9470969bb21b92945eb7fdb6525889b69f975ae5a12d886e065be84e0ffd5d605c0e667323b5464f1e376a0de17fb42fc03c112975c4b8615c8437a518f39177998306dca370227c96d33b7fb0bbfb5dc6d016f2d1f60b618f0ca8afc188cb4d4bbdf6c5fdedb82904049c0f537c13946d65f504c93e6944a780b8ea221ea2575d1bfbfb3d29c4e7",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/tomb_api"
+}
